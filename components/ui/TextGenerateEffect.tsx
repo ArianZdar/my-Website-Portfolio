@@ -25,7 +25,8 @@ export const TextGenerateEffect = ({
       },
       {
         duration: duration ? duration : 1,
-        delay: stagger(0.2),
+        delay: stagger(0.09),
+        ease: [0.25, 0.1, 0.25, 1],
       }
     );
   }, [scope.current]);
@@ -44,6 +45,7 @@ export const TextGenerateEffect = ({
                 } opacity-0 transition-all duration-300 hover:text-purple-300`}
                 style={{
                 filter: filter ? "blur(10px)" : "none",
+                willChange: "opacity, filter",
                 }}>
                 {word}{" "}
             </motion.span>
